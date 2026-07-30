@@ -4,7 +4,7 @@ window.SITE_DATA = {
   title: "Assistant Professor, Shanghai Maritime University",
   affiliation: "Shanghai Maritime University",
   location: "Shanghai, China",
-  email: "18800162871@163.com",
+  email: "mzli@shmtu.edu.cn;",
   cvUrl: "",
   scholarUrl: "",
   personalUrl: "",
@@ -54,80 +54,21 @@ window.SITE_DATA = {
   ],
 
   research: [
-    {
-      title: "无人系统调度优化",
-      description:
-        "面向自动化集装箱码头、无人车、无人机和移动机器人等场景，研究任务分配、路径规划、充换电和多设备协同调度问题。"
-    },
-    {
-      title: "数据驱动的运筹优化",
-      description:
-        "结合分布鲁棒优化、数据驱动建模和精确求解算法，处理交通物流系统中的需求、行驶时间、能耗和服务能力不确定性。"
-    },
-    {
-      title: "强化学习与仿真优化",
-      description:
-        "将深度强化学习、仿真建模和组合优化结合，用于复杂物流系统中的动态决策、资源配置和高维调度。"
-    },
-    {
-      title: "绿色交通与智慧港口",
-      description:
-        "关注自动化码头低碳运行、电动重卡补能、AGV 电池换电站规划和绿色货运系统优化。"
-    }
+    { title: "港口与物流系统优化、数据驱动的运筹优化" },
+    { title: "强化学习与仿真优化" },
+    { title: "绿色交通" }
   ],
 
   publications: [
-    {
-      title:
-        "Integrated AGV Positioning and Scheduling Using Simulation-Based Reinforcement Learning and Combinatorial Optimization in Automated Container Terminals",
-      authors: "李明泽, Qingcheng Zeng, Kang Chen, Haobin Li",
-      venue: "IEEE Transactions on Intelligent Transportation Systems, 2025",
-      status: "JCR 1区, 中科院双一区, FMS B类, CCF-B"
-    },
-    {
-      title: "数据驱动的自动化码头 AGV 分布鲁棒优化调度方法",
-      authors: "李明泽, 曾庆成, 李兴春",
-      venue: "系统工程理论与实践, 2024, 45(04): 1375-1388",
-      status: "CSSCI, FMS T1类"
-    },
-    {
-      title:
-        "After-Sales Repair Center Location and Scheduling Problem with Drone Transportation: Exact and Heuristic Methods",
-      authors: "Bo Ren, 李明泽*, Huan Zhang, Ping He",
-      venue: "Computers & Industrial Engineering, 2025, 211: 111627",
-      status: "共同一作/独立通讯, JCR 1区, ABS 2星, 中科院双一区, FMS B类"
-    },
-    {
-      title: "考虑充电因素的自动化集装箱码头 AGV 任务分配模型",
-      authors: "曾庆成, 李明泽, 云霄",
-      venue: "运筹与管理, 2024, 33(03): 56-62",
-      status: "CSSCI 扩展版, FMS T2类, 基金委管理学 A 类期刊"
-    },
-    {
-      title: "考虑拥堵因素的自动化码头多 AGV 无冲突动态路径规划模型",
-      authors: "曾庆成, 李明泽, 薛广顺",
-      venue: "大连海事大学学报, 2019, 45(04): 35-44",
-      status: "中文核心"
-    },
-    {
-      title:
-        "Distributionally robust battery investment and replacement for AGV battery swapping stations with demand uncertainty in automated container terminals",
-      authors: "Xingchun Li, 李明泽*, Zhicheng Chen, Qingcheng Zeng",
-      venue: "Frontiers in Marine Science, 2026, 12: 1754484",
-      status: "独立通讯, JCR 1区, 中科院二区"
-    },
-    {
-      title: "数据驱动的自动化码头岸桥与 AGV 双层优化调度模型",
-      authors: "李兴春, 李明泽, 曾庆成*, 杨昂",
-      venue: "工程管理科技前沿, 2024, 43(06): 25-32",
-      status: "CSSCI, FMS T1类"
-    },
-    {
-      title: "长洲枢纽既有船闸和扩建船闸的通过能力分析",
-      authors: "吴澎, 刘春泽, 李明泽, 高成岩",
-      venue: "水运工程, 2023",
-      status: "中文核心"
-    }
+    "李明泽, Qingcheng Zeng, Kang Chen, Haobin Li. Integrated AGV Positioning and Scheduling Using Simulation-Based Reinforcement Learning and Combinatorial Optimization in Automated Container Terminals. IEEE Transactions on Intelligent Transportation Systems, 2025. （JCR 1区, 中科院双一区，FMS B类，CCF-B，人工智能与智慧交通领域顶级期刊）",
+    "李明泽, Huan Zhang, Weiyou Guo, Kailing Li. Distributionally Robust Energy Replenishment Scheduling for Line-Haul Electric Heavy-Duty Trucks under the Battery Leasing-Swapping Mode. Computers & Industrial Engineering. （JCR 1区，ABS 2星，中科院双一区，FMS B类）",
+    "Bo Ren, 李明泽*, Huan Zhang, Ping He. After-Sales Repair Center Location and Scheduling Problem with Drone Transportation: Exact and Heuristic Methods. Computers & Industrial Engineering, 2025, 211: 111627.（共同一作+独立通讯，JCR 1区，ABS 2星，中科院双一区，FMS B类）",
+    "Xingchun Li, 李明泽*, Zhicheng Chen, Qingcheng Zeng. Distributionally robust battery investment and replacement for AGV battery swapping stations with demand uncertainty in automated container terminals. Frontiers in Marine Science, 2026, 12: 1754484. （独立通讯，JCR 1区, 中科院二区）",
+    "李明泽, 曾庆成, 李兴春. 数据驱动的自动化码头 AGV 分布鲁棒优化调度方法. 系统工程理论与实践, 2024, 45(04): 1375-1388. （CSSCI，FMS T1类，国内顶刊）",
+    "曾庆成, 李明泽, 云霄. 考虑充电因素的自动化集装箱码头 AGV 任务分配模型. 运筹与管理, 2024, 33(03): 56-62. （CSSCI 扩展版，FMS T2类，基金委管理学 A 类期刊）",
+    "曾庆成, 李明泽, 薛广顺. 考虑拥堵因素的自动化码头多 AGV 无冲突动态路径规划模型. 大连海事大学学报, 2019, 45(04): 35-44. （中文核心）",
+    "李兴春, 李明泽, 曾庆成*, 杨昂. 数据驱动的自动化码头岸桥与 AGV 双层优化调度模型. 工程管理科技前沿, 2024, 43(06): 25-32. （CSSCI，FMS T1类，国内顶刊）",
+    "吴澎, 刘春泽, 李明泽, 高成岩. 长洲枢纽既有船闸和扩建船闸的通过能力分析. 水运工程, 2023.（中文核心）"
   ],
 
   workingPapers: [

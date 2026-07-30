@@ -19,7 +19,8 @@
     });
 
     document.querySelectorAll("[data-link='email']").forEach((node) => {
-      node.href = `mailto:${data.email || "mzli@shmtu.edu.cn"}`;
+      const email = text(data.email || "mzli@shmtu.edu.cn").replace(/[;\s]+$/g, "");
+      node.href = `mailto:${email}`;
     });
 
     document.title = `${data.name || "Mingze Li"} | Academic Homepage`;
@@ -85,7 +86,8 @@
       const item = document.createElement("li");
       const title = document.createElement("strong");
       title.textContent = text(entry.title);
-      item.append(title, `: ${text(entry.description)}`);
+      item.appendChild(title);
+      if (entry.description) item.append(`: ${text(entry.description)}`);
       holder.appendChild(item);
     });
   }
@@ -94,8 +96,19 @@
     const holder = document.querySelector(selector);
     if (!holder) return;
 
-    (entries || []).forEach((entry) => {
+    (entries || []).forEach((entry, index) => {
       const item = document.createElement("li");
+      const number = document.createElement("span");
+      number.className = "publication-number";
+      number.textContent = `[${index + 1}]\u00a0`;
+      item.appendChild(number);
+
+      if (typeof entry === "string") {
+        item.appendChild(document.createTextNode(entry));
+        holder.appendChild(item);
+        return;
+      }
+
       const title = document.createElement("span");
       title.className = "publication-title";
       title.textContent = text(entry.title);
