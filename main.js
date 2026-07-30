@@ -196,12 +196,4 @@
   appendAboutItems("#about-work-list", data.experience);
   appendResearch();
   appendPublications("#publication-list", data.publications);
-  appendPublications("#working-paper-list", data.workingPapers);
-  appendSimpleList("#policy-list", data.policyRecommendations);
-  appendDetailedList("#research-project-list", data.researchProjects);
-  appendDetailedList("#professional-project-list", data.professionalProjects);
-  appendSimpleList("#practice-list", data.socialPractice);
-  appendDetailedList("#award-list", data.awards);
-  appendDetailedList("#activity-list", data.academicActivities);
-  appendDetailedList("#skill-list", data.skills);
 })();
