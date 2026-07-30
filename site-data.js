@@ -13,32 +13,37 @@ window.SITE_DATA = {
 
   education: [
     {
-      date: "2022.9-至今",
-      title: "大连海事大学（211，双一流），管理科学与工程（管理学）",
-      note: "博士，导师：曾庆成教授"
+      date: "2022.9 ~ to date",
+      organization: "Dalian Maritime University",
+      highlight: "Ph.D. degree in Management Science and Engineering",
+      location: "Dalian, China"
     },
     {
-      date: "2024.12-2025.12",
-      title: "新加坡国立大学，工业系统工程",
-      note: "联合培养博士，合作导师：李浩斌博士"
+      date: "2024.12 ~ 2025.12",
+      organization: "National University of Singapore",
+      highlight: "Joint-training Ph.D. researcher in Industrial Systems Engineering",
+      location: "Singapore"
     },
     {
-      date: "2017.9-2020.6",
-      title: "大连海事大学（211，双一流），交通运输规划与管理（工学）",
-      note: "硕士，导师：曾庆成教授"
+      date: "2017.9 ~ 2020.6",
+      organization: "Dalian Maritime University",
+      highlight: "Master degree in Traffic and Transportation Planning and Management",
+      location: "Dalian, China"
     },
     {
-      date: "2013.9-2017.6",
-      title: "大连海事大学（211，双一流），航运管理（管理学）",
-      note: "学士，导师：曾庆成教授"
+      date: "2013.9 ~ 2017.6",
+      organization: "Dalian Maritime University",
+      highlight: "Bachelor degree in Shipping Management",
+      location: "Dalian, China"
     }
   ],
 
   experience: [
     {
-      date: "2020.7-2022.9",
-      title: "中国交通建设集团",
-      note: "港航战略、经济、财务分析，中级工程师"
+      date: "2020.7 ~ 2022.9",
+      organization: "China Communications Construction Group",
+      highlight: "Intermediate Engineer in port and waterway strategy, economics, and financial analysis",
+      location: "Beijing, China"
     }
   ],
 

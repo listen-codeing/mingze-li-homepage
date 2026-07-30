@@ -56,21 +56,23 @@
     holder.append(dt, dd);
   }
 
-  function appendPlainItems(selector, items) {
+  function appendAboutItems(selector, items) {
     const holder = document.querySelector(selector);
     if (!holder) return;
 
     (items || []).forEach((entry) => {
-      const item = document.createElement("div");
-      item.className = "plain-item";
-      item.innerHTML = `
-        <div class="plain-date"></div>
-        <p class="plain-title"><span class="plain-main"></span><span class="plain-note"></span></p>
-      `;
-      item.querySelector(".plain-date").textContent = text(entry.date);
-      item.querySelector(".plain-main").textContent = text(entry.title);
-      const note = item.querySelector(".plain-note");
-      note.textContent = entry.note ? `, ${entry.note}` : "";
+      const item = document.createElement("li");
+      const date = document.createElement("strong");
+      date.className = "about-date";
+      date.textContent = text(entry.date);
+
+      const highlight = document.createElement("strong");
+      highlight.className = "about-highlight";
+      highlight.textContent = text(entry.highlight);
+
+      item.append(date, ": ", text(entry.organization));
+      if (entry.highlight) item.append(", ", highlight);
+      if (entry.location) item.append(", ", text(entry.location));
       holder.appendChild(item);
     });
   }
@@ -177,8 +179,8 @@
 
   setFields();
   appendProfileLinks();
-  appendPlainItems("#education-list", data.education);
-  appendPlainItems("#experience-list", data.experience);
+  appendAboutItems("#about-education-list", data.education);
+  appendAboutItems("#about-work-list", data.experience);
   appendResearch();
   appendPublications("#publication-list", data.publications);
   appendPublications("#working-paper-list", data.workingPapers);
