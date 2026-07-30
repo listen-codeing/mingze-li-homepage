@@ -1,5 +1,8 @@
 (function () {
-  const data = window.SITE_DATA || {};
+  const siteData = window.SITE_DATA || {};
+  const pageLanguage = (window.SITE_LOCALE || document.documentElement.lang || "en").toLowerCase();
+  const locale = pageLanguage.startsWith("zh") ? "zh" : "en";
+  const data = siteData[locale] || siteData.en || siteData;
   const year = document.querySelector("#year");
 
   function text(value) {
@@ -23,7 +26,7 @@
       node.href = `mailto:${email}`;
     });
 
-    document.title = `${data.name || "Mingze Li"} | Academic Homepage`;
+    document.title = `${data.name || "Mingze Li"} | ${data.pageTitle || "Academic Homepage"}`;
     if (year) year.textContent = new Date().getFullYear();
   }
 
@@ -35,24 +38,22 @@
     dt.textContent = "Links";
     const dd = document.createElement("dd");
 
-    [
+    const links = [
       { label: "CV", url: data.cvUrl },
       { label: "Google Scholar", url: data.scholarUrl },
       { label: "Personal Site", url: data.personalUrl },
-    ]
-      .filter((item) => safeUrl(item.url))
-      .forEach((item) => {
-        const link = document.createElement("a");
-        link.href = safeUrl(item.url);
-        link.textContent = item.label;
-        link.target = "_blank";
-        link.rel = "noreferrer";
-        dd.appendChild(link);
-      });
+    ].filter((item) => safeUrl(item.url));
 
-    if (dd.childNodes.length === 0) {
-      dd.textContent = "Available upon request";
-    }
+    if (links.length === 0) return;
+
+    links.forEach((item) => {
+      const link = document.createElement("a");
+      link.href = safeUrl(item.url);
+      link.textContent = item.label;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      dd.appendChild(link);
+    });
 
     holder.append(dt, dd);
   }
@@ -100,7 +101,7 @@
       const item = document.createElement("li");
       const number = document.createElement("span");
       number.className = "publication-number";
-      number.textContent = `[${index + 1}]\u00a0`;
+      number.textContent = `${index + 1}. `;
       item.appendChild(number);
 
       if (typeof entry === "string") {
