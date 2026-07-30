@@ -93,6 +93,40 @@
     });
   }
 
+  function appendHighlightedText(parent, value, highlights) {
+    const source = text(value);
+    const terms = Array.from(new Set((highlights || []).map(text).filter(Boolean))).sort(
+      (left, right) => right.length - left.length
+    );
+
+    if (terms.length === 0) {
+      parent.appendChild(document.createTextNode(source));
+      return;
+    }
+
+    let cursor = 0;
+    while (cursor < source.length) {
+      const match = terms.find((term) => source.startsWith(term, cursor));
+
+      if (match) {
+        const strong = document.createElement("strong");
+        strong.className = "publication-highlight";
+        strong.textContent = match;
+        parent.appendChild(strong);
+        cursor += match.length;
+        continue;
+      }
+
+      const nextMatch = terms.reduce((nearest, term) => {
+        const position = source.indexOf(term, cursor + 1);
+        return position === -1 || position >= nearest ? nearest : position;
+      }, source.length);
+
+      parent.appendChild(document.createTextNode(source.slice(cursor, nextMatch)));
+      cursor = nextMatch;
+    }
+  }
+
   function appendPublications(selector, entries) {
     const holder = document.querySelector(selector);
     if (!holder) return;
@@ -105,7 +139,7 @@
       item.appendChild(number);
 
       if (typeof entry === "string") {
-        item.appendChild(document.createTextNode(entry));
+        appendHighlightedText(item, entry, data.publicationHighlights);
         holder.appendChild(item);
         return;
       }
