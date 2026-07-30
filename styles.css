@@ -6,8 +6,6 @@
   --border: #dadce0;
   --link: #1a73e8;
   --heading: #111111;
-  --academic-green: #0f5d53;
-  --academic-green-dark: #0b4a52;
   --nav-bg: #f8f9fa;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -182,48 +180,35 @@ h3 {
   margin-bottom: 12px;
 }
 
-.about-section h2 {
-  margin-bottom: 44px;
-  padding-bottom: 0;
-  border-bottom: 0;
-  color: var(--academic-green);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 44px;
-  font-weight: 700;
-  line-height: 1.08;
-}
-
 .about-group {
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 }
 
 .about-group h3 {
-  margin-bottom: 14px;
-  color: var(--academic-green-dark);
-  font-size: 20px;
+  margin-bottom: 8px;
+  color: var(--heading);
+  font-size: 15px;
   font-weight: 700;
 }
 
 .about-experience-list {
   margin: 0;
-  padding-left: 24px;
-  list-style-type: square;
+  padding-left: 22px;
 }
 
 .about-experience-list li {
-  margin-bottom: 15px;
-  padding-left: 2px;
-  color: #1f1f1f;
-  font-size: 20px;
-  line-height: 1.45;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.58;
 }
 
 .about-date {
-  color: #111111;
+  color: var(--text);
 }
 
 .about-highlight {
-  color: var(--academic-green-dark);
+  color: var(--text);
 }
 
 .plain-list,

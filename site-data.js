@@ -1,9 +1,9 @@
 window.SITE_DATA = {
   name: "Mingze Li (李明泽)",
   initials: "ML",
-  title: "Ph.D. Candidate, Management Science and Engineering",
-  affiliation: "Dalian Maritime University",
-  location: "Dalian, China",
+  title: "Assistant Professor, Shanghai Maritime University",
+  affiliation: "Shanghai Maritime University",
+  location: "Shanghai, China",
   email: "18800162871@163.com",
   cvUrl: "",
   scholarUrl: "",
@@ -13,7 +13,7 @@ window.SITE_DATA = {
 
   education: [
     {
-      date: "2022.9 ~ to date",
+      date: "2022.9 ~ 2026.6",
       organization: "Dalian Maritime University",
       highlight: "Ph.D. degree in Management Science and Engineering",
       location: "Dalian, China"
@@ -40,10 +40,16 @@ window.SITE_DATA = {
 
   experience: [
     {
-      date: "2020.7 ~ 2022.9",
+      date: "2020.7 ~ 2022.8",
       organization: "China Communications Construction Group",
-      highlight: "Intermediate Engineer in port and waterway strategy, economics, and financial analysis",
+      highlight: "Intermediate Engineer in Transportation Planning",
       location: "Beijing, China"
+    },
+    {
+      date: "2026.7 ~ to date",
+      organization: "Shanghai Maritime University",
+      highlight: "Assistant Professor",
+      location: "Shanghai, China"
     }
   ],
 
