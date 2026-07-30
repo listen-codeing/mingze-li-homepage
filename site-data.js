@@ -60,15 +60,15 @@ window.SITE_DATA = {
   ],
 
   publications: [
-    "李明泽, Qingcheng Zeng, Kang Chen, Haobin Li. Integrated AGV Positioning and Scheduling Using Simulation-Based Reinforcement Learning and Combinatorial Optimization in Automated Container Terminals. IEEE Transactions on Intelligent Transportation Systems, 2025. （JCR 1区, 中科院双一区，FMS B类，CCF-B，人工智能与智慧交通领域顶级期刊）",
-    "李明泽, Huan Zhang, Weiyou Guo, Kailing Li. Distributionally Robust Energy Replenishment Scheduling for Line-Haul Electric Heavy-Duty Trucks under the Battery Leasing-Swapping Mode. Computers & Industrial Engineering. （JCR 1区，ABS 2星，中科院双一区，FMS B类）",
-    "Bo Ren, 李明泽*, Huan Zhang, Ping He. After-Sales Repair Center Location and Scheduling Problem with Drone Transportation: Exact and Heuristic Methods. Computers & Industrial Engineering, 2025, 211: 111627.（共同一作+独立通讯，JCR 1区，ABS 2星，中科院双一区，FMS B类）",
     "Xingchun Li, 李明泽*, Zhicheng Chen, Qingcheng Zeng. Distributionally robust battery investment and replacement for AGV battery swapping stations with demand uncertainty in automated container terminals. Frontiers in Marine Science, 2026, 12: 1754484. （独立通讯，JCR 1区, 中科院二区）",
+    "李明泽, Qingcheng Zeng, Kang Chen, Haobin Li. Integrated AGV Positioning and Scheduling Using Simulation-Based Reinforcement Learning and Combinatorial Optimization in Automated Container Terminals. IEEE Transactions on Intelligent Transportation Systems, 2025. （JCR 1区, 中科院双一区，FMS B类，CCF-B，人工智能与智慧交通领域顶级期刊）",
+    "Bo Ren, 李明泽*, Huan Zhang, Ping He. After-Sales Repair Center Location and Scheduling Problem with Drone Transportation: Exact and Heuristic Methods. Computers & Industrial Engineering, 2025, 211: 111627.（共同一作+独立通讯，JCR 1区，ABS 2星，中科院双一区，FMS B类）",
+    "李明泽, Huan Zhang, Weiyou Guo, Kailing Li. Distributionally Robust Energy Replenishment Scheduling for Line-Haul Electric Heavy-Duty Trucks under the Battery Leasing-Swapping Mode. Computers & Industrial Engineering. （JCR 1区，ABS 2星，中科院双一区，FMS B类）",
+    "李兴春, 李明泽, 曾庆成*, 杨昂. 数据驱动的自动化码头岸桥与 AGV 双层优化调度模型. 工程管理科技前沿, 2024, 43(06): 25-32. （CSSCI，FMS T1类，国内顶刊）",
     "李明泽, 曾庆成, 李兴春. 数据驱动的自动化码头 AGV 分布鲁棒优化调度方法. 系统工程理论与实践, 2024, 45(04): 1375-1388. （CSSCI，FMS T1类，国内顶刊）",
     "曾庆成, 李明泽, 云霄. 考虑充电因素的自动化集装箱码头 AGV 任务分配模型. 运筹与管理, 2024, 33(03): 56-62. （CSSCI 扩展版，FMS T2类，基金委管理学 A 类期刊）",
-    "曾庆成, 李明泽, 薛广顺. 考虑拥堵因素的自动化码头多 AGV 无冲突动态路径规划模型. 大连海事大学学报, 2019, 45(04): 35-44. （中文核心）",
-    "李兴春, 李明泽, 曾庆成*, 杨昂. 数据驱动的自动化码头岸桥与 AGV 双层优化调度模型. 工程管理科技前沿, 2024, 43(06): 25-32. （CSSCI，FMS T1类，国内顶刊）",
-    "吴澎, 刘春泽, 李明泽, 高成岩. 长洲枢纽既有船闸和扩建船闸的通过能力分析. 水运工程, 2023.（中文核心）"
+    "吴澎, 刘春泽, 李明泽, 高成岩. 长洲枢纽既有船闸和扩建船闸的通过能力分析. 水运工程, 2023.（中文核心）",
+    "曾庆成, 李明泽, 薛广顺. 考虑拥堵因素的自动化码头多 AGV 无冲突动态路径规划模型. 大连海事大学学报, 2019, 45(04): 35-44. （中文核心）"
   ],
 
   workingPapers: [
