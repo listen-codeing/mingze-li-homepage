@@ -88,11 +88,11 @@
     });
   }
 
-  function appendPublications() {
-    const holder = document.querySelector("#publication-list");
+  function appendPublications(selector, entries) {
+    const holder = document.querySelector(selector);
     if (!holder) return;
 
-    (data.publications || []).forEach((entry) => {
+    (entries || []).forEach((entry) => {
       const item = document.createElement("li");
       const title = document.createElement("span");
       title.className = "publication-title";
@@ -124,7 +124,7 @@
     });
   }
 
-  function appendSimpleList(selector, items, formatter) {
+  function appendSimpleList(selector, items, formatter = (entry) => entry) {
     const holder = document.querySelector(selector);
     if (!holder) return;
 
@@ -135,20 +135,58 @@
     });
   }
 
+  function appendDetailedList(selector, items) {
+    const holder = document.querySelector(selector);
+    if (!holder) return;
+
+    (items || []).forEach((entry) => {
+      const item = document.createElement("article");
+      item.className = "detail-item";
+
+      const title = document.createElement("h3");
+      title.textContent = text(entry.title);
+      item.appendChild(title);
+
+      if (entry.meta) {
+        const meta = document.createElement("p");
+        meta.className = "detail-meta";
+        meta.textContent = text(entry.meta);
+        item.appendChild(meta);
+      }
+
+      if (entry.description) {
+        const description = document.createElement("p");
+        description.textContent = text(entry.description);
+        item.appendChild(description);
+      }
+
+      if (entry.details && entry.details.length > 0) {
+        const list = document.createElement("ul");
+        list.className = "detail-list";
+        entry.details.forEach((detail) => {
+          const detailItem = document.createElement("li");
+          detailItem.textContent = text(detail);
+          list.appendChild(detailItem);
+        });
+        item.appendChild(list);
+      }
+
+      holder.appendChild(item);
+    });
+  }
+
   setFields();
   appendProfileLinks();
   appendPlainItems("#education-list", data.education);
   appendPlainItems("#experience-list", data.experience);
   appendResearch();
-  appendPublications();
-  appendSimpleList(
-    "#project-list",
-    data.projects,
-    (entry) => `${entry.title}: ${entry.description}`
-  );
-  appendSimpleList(
-    "#service-list",
-    data.talks,
-    (entry) => `${entry.date}: ${entry.title}${entry.venue ? `, ${entry.venue}` : ""}`
-  );
+  appendPublications("#publication-list", data.publications);
+  appendPublications("#working-paper-list", data.workingPapers);
+  appendSimpleList("#policy-list", data.policyRecommendations);
+  appendDetailedList("#research-project-list", data.researchProjects);
+  appendDetailedList("#professional-project-list", data.professionalProjects);
+  appendSimpleList("#practice-list", data.socialPractice);
+  appendDetailedList("#award-list", data.awards);
+  appendDetailedList("#activity-list", data.academicActivities);
+  appendDetailedList("#skill-list", data.skills);
 })();
