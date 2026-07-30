@@ -82,7 +82,7 @@
         {
           date: "2013.9 ~ 2017.6",
           organization: "Dalian Maritime University",
-          highlight: "Bachelor's Degree in Shipping Management",
+          highlight: "Bachelor's Degree in Traffic Management",
           location: "Dalian, China"
         }
       ],
@@ -115,7 +115,7 @@
 
     zh: {
       name: "李明泽",
-      title: "上海海事大学助理教授",
+      title: "上海海事大学讲师",
       affiliation: "上海海事大学",
       location: "中国上海",
       email: "mzli@shmtu.edu.cn;",
@@ -146,7 +146,7 @@
         {
           date: "2013.9 ~ 2017.6",
           organization: "大连海事大学",
-          highlight: "航运管理学士",
+          highlight: "交通管理学士",
           location: "中国大连"
         }
       ],
@@ -161,7 +161,7 @@
         {
           date: "2026.7 ~ 至今",
           organization: "上海海事大学",
-          highlight: "助理教授",
+          highlight: "讲师",
           location: "中国上海"
         }
       ],
