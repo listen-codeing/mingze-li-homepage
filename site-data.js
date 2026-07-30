@@ -1,26 +1,26 @@
 (function () {
   const englishPublications = [
-    "Mingze Li, Huan Zhang, Weiyou Guo, Kailing Li. Distributionally Robust Energy Replenishment Scheduling for Line-Haul Electric Heavy-Duty Trucks under the Battery Leasing-Swapping Mode. Computers & Industrial Engineering, 2026.",
+    "Mingze Li, Huan Zhang*, Weiyou Guo, Kailing Li. Distributionally Robust Energy Replenishment Scheduling for Line-Haul Electric Heavy-Duty Trucks under the Battery Leasing-Swapping Mode. Computers & Industrial Engineering, 2026.",
     "Xingchun Li, Mingze Li*, Zhicheng Chen, Qingcheng Zeng. Distributionally robust battery investment and replacement for AGV battery swapping stations with demand uncertainty in automated container terminals. Frontiers in Marine Science, 2026, 12: 1754484.",
-    "Mingze Li, Qingcheng Zeng, Kang Chen, Haobin Li. Integrated AGV Positioning and Scheduling Using Simulation-Based Reinforcement Learning and Combinatorial Optimization in Automated Container Terminals. IEEE Transactions on Intelligent Transportation Systems, 2025.",
+    "Mingze Li, Qingcheng Zeng*, Kang Chen, Haobin Li. Integrated AGV Positioning and Scheduling Using Simulation-Based Reinforcement Learning and Combinatorial Optimization in Automated Container Terminals. IEEE Transactions on Intelligent Transportation Systems, 2025.",
     "Bo Ren, Mingze Li*, Huan Zhang, Ping He. After-Sales Repair Center Location and Scheduling Problem with Drone Transportation: Exact and Heuristic Methods. Computers & Industrial Engineering, 2025, 211: 111627.",
     "Xingchun Li, Mingze Li, Qingcheng Zeng*, Ang Yang. Data-driven bilevel optimization model for quay crane and AGV scheduling in automated container terminals. Frontiers of Engineering Management Science and Technology, 2024, 43(06): 25-32.",
-    "Mingze Li, Qingcheng Zeng, Xingchun Li. Data-driven distributionally robust optimization method for AGV scheduling in automated container terminals. Systems Engineering - Theory & Practice, 2024, 45(04): 1375-1388.",
-    "Qingcheng Zeng, Mingze Li, Xiao Yun. AGV task assignment model for automated container terminals considering charging operations. Operations Research and Management Science, 2024, 33(03): 56-62.",
-    "Peng Wu, Chunze Liu, Mingze Li, Chengyan Gao. Capacity analysis of existing and expanded ship locks at Changzhou Hub. Port & Waterway Engineering, 2023.",
-    "Qingcheng Zeng, Mingze Li, Guangshun Xue. Conflict-free dynamic path planning model for multiple AGVs in automated terminals considering congestion. Journal of Dalian Maritime University, 2019, 45(04): 35-44."
+    "Mingze Li, Qingcheng Zeng*, Xingchun Li. Data-driven distributionally robust optimization method for AGV scheduling in automated container terminals. Systems Engineering - Theory & Practice, 2024, 45(04): 1375-1388.",
+    "Qingcheng Zeng*, Mingze Li, Xiao Yun. AGV task assignment model for automated container terminals considering charging operations. Operations Research and Management Science, 2024, 33(03): 56-62.",
+    "Peng Wu, Chunze Liu, Mingze Li, Chengyan Gao, Qingcheng Zeng*. Capacity analysis of existing and expanded ship locks at Changzhou Hub. Port & Waterway Engineering, 2023.",
+    "Qingcheng Zeng*, Mingze Li, Guangshun Xue. Conflict-free dynamic path planning model for multiple AGVs in automated terminals considering congestion. Journal of Dalian Maritime University, 2019, 45(04): 35-44."
   ];
 
   const chinesePublications = [
-    "Mingze Li, Huan Zhang, Weiyou Guo, Kailing Li. Distributionally Robust Energy Replenishment Scheduling for Line-Haul Electric Heavy-Duty Trucks under the Battery Leasing-Swapping Mode. Computers & Industrial Engineering, 2026.",
+    "Mingze Li, Huan Zhang*, Weiyou Guo, Kailing Li. Distributionally Robust Energy Replenishment Scheduling for Line-Haul Electric Heavy-Duty Trucks under the Battery Leasing-Swapping Mode. Computers & Industrial Engineering, 2026.",
     "Xingchun Li, Mingze Li*, Zhicheng Chen, Qingcheng Zeng. Distributionally robust battery investment and replacement for AGV battery swapping stations with demand uncertainty in automated container terminals. Frontiers in Marine Science, 2026, 12: 1754484.",
-    "Mingze Li, Qingcheng Zeng, Kang Chen, Haobin Li. Integrated AGV Positioning and Scheduling Using Simulation-Based Reinforcement Learning and Combinatorial Optimization in Automated Container Terminals. IEEE Transactions on Intelligent Transportation Systems, 2025.",
+    "Mingze Li, Qingcheng Zeng*, Kang Chen, Haobin Li. Integrated AGV Positioning and Scheduling Using Simulation-Based Reinforcement Learning and Combinatorial Optimization in Automated Container Terminals. IEEE Transactions on Intelligent Transportation Systems, 2025.",
     "Bo Ren, Mingze Li*, Huan Zhang, Ping He. After-Sales Repair Center Location and Scheduling Problem with Drone Transportation: Exact and Heuristic Methods. Computers & Industrial Engineering, 2025, 211: 111627.",
     "李兴春, 李明泽, 曾庆成*, 杨昂. 数据驱动的自动化码头岸桥与 AGV 双层优化调度模型. 工程管理科技前沿, 2024, 43(06): 25-32.",
-    "李明泽, 曾庆成, 李兴春. 数据驱动的自动化码头 AGV 分布鲁棒优化调度方法. 系统工程理论与实践, 2024, 45(04): 1375-1388.",
-    "曾庆成, 李明泽, 云霄. 考虑充电因素的自动化集装箱码头 AGV 任务分配模型. 运筹与管理, 2024, 33(03): 56-62.",
-    "吴澎, 刘春泽, 李明泽, 高成岩. 长洲枢纽既有船闸和扩建船闸的通过能力分析. 水运工程, 2023(8): 56-62.",
-    "曾庆成, 李明泽, 薛广顺. 考虑拥堵因素的自动化码头多 AGV 无冲突动态路径规划模型. 大连海事大学学报, 2019, 45(04): 35-44."
+    "李明泽, 曾庆成*, 李兴春. 数据驱动的自动化码头 AGV 分布鲁棒优化调度方法. 系统工程理论与实践, 2024, 45(04): 1375-1388.",
+    "曾庆成*, 李明泽, 云霄. 考虑充电因素的自动化集装箱码头 AGV 任务分配模型. 运筹与管理, 2024, 33(03): 56-62.",
+    "吴澎, 刘春泽, 李明泽, 高成岩, 曾庆成*. 长洲枢纽既有船闸和扩建船闸的通过能力分析. 水运工程, 2023(8): 56-62.",
+    "曾庆成*, 李明泽, 薛广顺. 考虑拥堵因素的自动化码头多 AGV 无冲突动态路径规划模型. 大连海事大学学报, 2019, 45(04): 35-44."
   ];
 
   const englishPublicationHighlights = [
