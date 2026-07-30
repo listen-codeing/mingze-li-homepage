@@ -1,160 +1,154 @@
 (function () {
   const data = window.SITE_DATA || {};
-  const byField = document.querySelectorAll("[data-field]");
-  const navToggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".site-nav");
   const year = document.querySelector("#year");
 
-  function setText(selector, value) {
-    document.querySelectorAll(selector).forEach((node) => {
-      node.textContent = value || "";
+  function text(value) {
+    return value == null ? "" : String(value);
+  }
+
+  function safeUrl(url) {
+    return typeof url === "string" && url.trim() ? url.trim() : "";
+  }
+
+  function setFields() {
+    document.querySelectorAll("[data-field]").forEach((node) => {
+      const field = node.getAttribute("data-field");
+      if (field && Object.prototype.hasOwnProperty.call(data, field)) {
+        node.textContent = text(data[field]);
+      }
+    });
+
+    document.querySelectorAll("[data-link='email']").forEach((node) => {
+      node.href = `mailto:${data.email || "mzli@shmtu.edu.cn"}`;
+    });
+
+    document.title = `${data.name || "Mingze Li"} | Academic Homepage`;
+    if (year) year.textContent = new Date().getFullYear();
+  }
+
+  function appendProfileLinks() {
+    const holder = document.querySelector("#profile-links");
+    if (!holder) return;
+
+    const dt = document.createElement("dt");
+    dt.textContent = "Links";
+    const dd = document.createElement("dd");
+
+    [
+      { label: "CV", url: data.cvUrl },
+      { label: "Google Scholar", url: data.scholarUrl },
+      { label: "Personal Site", url: data.personalUrl },
+    ]
+      .filter((item) => safeUrl(item.url))
+      .forEach((item) => {
+        const link = document.createElement("a");
+        link.href = safeUrl(item.url);
+        link.textContent = item.label;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+        dd.appendChild(link);
+      });
+
+    if (dd.childNodes.length === 0) {
+      dd.textContent = "Available upon request";
+    }
+
+    holder.append(dt, dd);
+  }
+
+  function appendPlainItems(selector, items) {
+    const holder = document.querySelector(selector);
+    if (!holder) return;
+
+    (items || []).forEach((entry) => {
+      const item = document.createElement("div");
+      item.className = "plain-item";
+      item.innerHTML = `
+        <div class="plain-date"></div>
+        <p class="plain-title"><span class="plain-main"></span><span class="plain-note"></span></p>
+      `;
+      item.querySelector(".plain-date").textContent = text(entry.date);
+      item.querySelector(".plain-main").textContent = text(entry.title);
+      const note = item.querySelector(".plain-note");
+      note.textContent = entry.note ? `, ${entry.note}` : "";
+      holder.appendChild(item);
     });
   }
 
-  function safeLink(url) {
-    return typeof url === "string" && url.trim().length > 0 ? url.trim() : "";
+  function appendResearch() {
+    const holder = document.querySelector("#research-list");
+    if (!holder) return;
+
+    (data.research || []).forEach((entry) => {
+      const item = document.createElement("li");
+      const title = document.createElement("strong");
+      title.textContent = text(entry.title);
+      item.append(title, `: ${text(entry.description)}`);
+      holder.appendChild(item);
+    });
   }
 
-  function makeLink(label, url, className) {
-    const link = document.createElement("a");
-    const href = safeLink(url);
-    link.className = className || "text-link";
-    link.textContent = label;
-    if (href) {
-      link.href = href;
-      link.target = href.startsWith("mailto:") || href.startsWith("#") ? "" : "_blank";
-      link.rel = href.startsWith("http") ? "noreferrer" : "";
-    } else {
-      link.href = "#";
-      link.classList.add("is-disabled");
-      link.setAttribute("aria-disabled", "true");
-      link.addEventListener("click", (event) => event.preventDefault());
-    }
-    return link;
+  function appendPublications() {
+    const holder = document.querySelector("#publication-list");
+    if (!holder) return;
+
+    (data.publications || []).forEach((entry) => {
+      const item = document.createElement("li");
+      const title = document.createElement("span");
+      title.className = "publication-title";
+      title.textContent = text(entry.title);
+
+      const meta = document.createElement("span");
+      meta.className = "publication-meta";
+      meta.textContent = ` ${text(entry.authors)}. ${text(entry.venue)}${entry.status ? `, ${entry.status}` : ""}.`;
+
+      item.append(title, ".", meta);
+
+      const links = (entry.links || []).filter((link) => safeUrl(link.url));
+      if (links.length > 0) {
+        const linkWrap = document.createElement("span");
+        linkWrap.className = "publication-links";
+        linkWrap.append(" ");
+        links.forEach((link) => {
+          const anchor = document.createElement("a");
+          anchor.href = safeUrl(link.url);
+          anchor.textContent = `[${link.label || "Link"}]`;
+          anchor.target = "_blank";
+          anchor.rel = "noreferrer";
+          linkWrap.appendChild(anchor);
+        });
+        item.appendChild(linkWrap);
+      }
+
+      holder.appendChild(item);
+    });
   }
 
-  byField.forEach((node) => {
-    const field = node.getAttribute("data-field");
-    if (field && Object.prototype.hasOwnProperty.call(data, field)) {
-      node.textContent = data[field];
-    }
-  });
+  function appendSimpleList(selector, items, formatter) {
+    const holder = document.querySelector(selector);
+    if (!holder) return;
 
-  document.title = `${data.name || "Mingze Li"} | Academic Homepage`;
-  year.textContent = new Date().getFullYear();
+    (items || []).forEach((entry) => {
+      const item = document.createElement("li");
+      item.textContent = formatter(entry);
+      holder.appendChild(item);
+    });
+  }
 
-  document.querySelectorAll("[data-link='email']").forEach((node) => {
-    node.href = `mailto:${data.email || "mzli@shmtu.edu.cn"}`;
-  });
-  document.querySelector("[data-link='cv']").replaceWith(
-    makeLink("Download CV", data.cvUrl, "button secondary")
+  setFields();
+  appendProfileLinks();
+  appendPlainItems("#education-list", data.education);
+  appendPlainItems("#experience-list", data.experience);
+  appendResearch();
+  appendPublications();
+  appendSimpleList(
+    "#project-list",
+    data.projects,
+    (entry) => `${entry.title}: ${entry.description}`
   );
-  document.querySelector("[data-link='scholar']").replaceWith(
-    makeLink("Google Scholar", data.scholarUrl, "button ghost")
+  appendSimpleList(
+    "#service-list",
+    data.talks,
+    (entry) => `${entry.date}: ${entry.title}${entry.venue ? `, ${entry.venue}` : ""}`
   );
-
-  const quickFacts = document.querySelector("#quick-facts");
-  (data.quickFacts || []).forEach((fact) => {
-    const item = document.createElement("li");
-    item.textContent = fact;
-    quickFacts.appendChild(item);
-  });
-
-  const infoGrid = document.querySelector("#info-grid");
-  (data.info || []).forEach((entry) => {
-    const item = document.createElement("article");
-    item.className = "info-item";
-    item.innerHTML = `<p class="info-label"></p><p class="info-value"></p>`;
-    setTextIn(item, ".info-label", entry.label);
-    setTextIn(item, ".info-value", entry.value);
-    infoGrid.appendChild(item);
-  });
-
-  const researchGrid = document.querySelector("#research-grid");
-  (data.research || []).forEach((entry) => {
-    const card = document.createElement("article");
-    card.className = "research-card";
-    card.innerHTML = `
-      <span class="card-tag"></span>
-      <h3></h3>
-      <p></p>
-    `;
-    setTextIn(card, ".card-tag", entry.tag);
-    setTextIn(card, "h3", entry.title);
-    setTextIn(card, "p", entry.description);
-    researchGrid.appendChild(card);
-  });
-
-  const publicationList = document.querySelector("#publication-list");
-  (data.publications || []).forEach((entry) => {
-    const item = document.createElement("article");
-    item.className = "publication-item";
-    item.innerHTML = `
-      <div class="publication-year"></div>
-      <div>
-        <p class="publication-title"></p>
-        <p class="publication-meta"></p>
-        <div class="link-row"></div>
-      </div>
-    `;
-    setTextIn(item, ".publication-year", entry.year);
-    setTextIn(item, ".publication-title", entry.title);
-    setTextIn(
-      item,
-      ".publication-meta",
-      `${entry.authors || ""}. ${entry.venue || ""}${entry.status ? `, ${entry.status}` : ""}.`
-    );
-    const row = item.querySelector(".link-row");
-    (entry.links || []).forEach((link) => row.appendChild(makeLink(link.label, link.url)));
-    publicationList.appendChild(item);
-  });
-
-  const projectGrid = document.querySelector("#project-grid");
-  (data.projects || []).forEach((entry) => {
-    const card = document.createElement("article");
-    card.className = "project-card";
-    card.innerHTML = `
-      <span class="card-tag"></span>
-      <h3></h3>
-      <p></p>
-      <div class="link-row"></div>
-    `;
-    setTextIn(card, ".card-tag", entry.tag);
-    setTextIn(card, "h3", entry.title);
-    setTextIn(card, "p", entry.description);
-    card.querySelector(".link-row").appendChild(makeLink("Open", entry.url));
-    projectGrid.appendChild(card);
-  });
-
-  const talkList = document.querySelector("#talk-list");
-  (data.talks || []).forEach((entry) => {
-    const item = document.createElement("article");
-    item.className = "timeline-item";
-    item.innerHTML = `
-      <div class="timeline-date"></div>
-      <div>
-        <p class="timeline-title"></p>
-        <p class="timeline-meta"></p>
-      </div>
-    `;
-    setTextIn(item, ".timeline-date", entry.date);
-    setTextIn(item, ".timeline-title", entry.title);
-    setTextIn(item, ".timeline-meta", entry.venue);
-    talkList.appendChild(item);
-  });
-
-  navToggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("is-open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  nav.addEventListener("click", () => {
-    nav.classList.remove("is-open");
-    navToggle.setAttribute("aria-expanded", "false");
-  });
-
-  function setTextIn(parent, selector, value) {
-    const target = parent.querySelector(selector);
-    if (target) target.textContent = value || "";
-  }
 })();

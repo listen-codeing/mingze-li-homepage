@@ -12,6 +12,31 @@ window.SITE_DATA = {
   location: "Shanghai, China",
   cvUrl: "",
   scholarUrl: "",
+  personalUrl: "",
+  education: [
+    {
+      date: "2024-2025",
+      title: "Joint-training Ph.D. Researcher, National University of Singapore",
+      note: "Industrial Systems Engineering"
+    },
+    {
+      date: "Ph.D.",
+      title: "Management Science and Engineering, Dalian Maritime University",
+      note: "Dalian, China"
+    },
+    {
+      date: "B.S. / M.S.",
+      title: "Dalian Maritime University",
+      note: "Dalian, China"
+    }
+  ],
+  experience: [
+    {
+      date: "Present",
+      title: "Faculty Member, Shanghai Maritime University",
+      note: "Logistics Science and Engineering Institute"
+    }
+  ],
   quickFacts: [
     "Logistics Optimization",
     "Intelligent Transportation",
