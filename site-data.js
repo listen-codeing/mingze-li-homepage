@@ -1,11 +1,12 @@
 (function () {
   const englishPublications = [
+    "Mingze Li, Chenrui Qu*, Kailing Li*, Qingcheng Zeng. Predict-then-optimize for automated guided vehicle opportunity recharging scheduling considering nonlinear charging time. Engineering Applications of Artificial Intelligence, 2026, 185: 116510. https://doi.org/10.1016/j.engappai.2026.116510.",
     "Mingze Li, Bo Ren*, Huan Zhang, Ping He. A Data-Driven Scheduling Framework for Autonomous Mobile Robots with Flexible Charging in Uncertain Hospitals. Computers & Industrial Engineering, 2026 (accepted).",
     "Mingze Li, Huan Zhang*, Weiyou Guo, Kailing Li. Distributionally Robust Energy Replenishment Scheduling for Line-Haul Electric Heavy-Duty Trucks under the Battery Leasing-Swapping Mode. Computers & Industrial Engineering, 2026 (accepted).",
     "Mingze Li, Qingcheng Zeng*, Kang Chen, Haobin Li. Integrated AGV Positioning and Scheduling Using Simulation-Based Reinforcement Learning and Combinatorial Optimization in Automated Container Terminals. IEEE Transactions on Intelligent Transportation Systems, 2026, 27(3): 3564-3578.",
-    "Mingze Li, Chenrui Qu*, Kailing Li*, Qingcheng Zeng. Predict-then-optimize for automated guided vehicle opportunity recharging scheduling considering nonlinear charging time. Engineering Applications of Artificial Intelligence, 2026, 185: 116510. https://doi.org/10.1016/j.engappai.2026.116510.",
     "Kailing Li, Mingze Li*. Modeling Theory and Applications of Grey Models Based on Fractional-Order Differentiation. Statistics & Decision, 2026 (accepted).",
     "Xingchun Li, Mingze Li*, Zhicheng Chen, Qingcheng Zeng. Distributionally robust battery investment and replacement for AGV battery swapping stations with demand uncertainty in automated container terminals. Frontiers in Marine Science, 2026, 12: 1754484.",
+    "Yurun Gong, Kailing Li, Mingze Li. Sentiment Prediction of Grassroots Online Public Opinion Based on a Fractional-Order Local Grey Model. Journal of Library and Information Science, 2026 (accepted).",
     "Bo Ren, Mingze Li*, Huan Zhang, Ping He. After-Sales Repair Center Location and Scheduling Problem with Drone Transportation: Exact and Heuristic Methods. Computers & Industrial Engineering, 2025, 211: 111627.",
     "Mingze Li, Qingcheng Zeng*, Xingchun Li. Data-driven distributionally robust optimization method for AGV scheduling in automated container terminals. Systems Engineering - Theory & Practice, 2024, 45(04): 1375-1388.",
     "Qingcheng Zeng*, Mingze Li, Xiao Yun. AGV task assignment model for automated container terminals considering charging operations. Operations Research and Management Science, 2024, 33(03): 56-62.",
@@ -16,12 +17,13 @@
   ];
 
   const chinesePublications = [
+    "Mingze Li, Chenrui Qu*, Kailing Li*, Qingcheng Zeng. Predict-then-optimize for automated guided vehicle opportunity recharging scheduling considering nonlinear charging time. Engineering Applications of Artificial Intelligence, 2026, 185: 116510. https://doi.org/10.1016/j.engappai.2026.116510.",
     "Mingze Li, Bo Ren*, Huan Zhang, Ping He. A Data-Driven Scheduling Framework for Autonomous Mobile Robots with Flexible Charging in Uncertain Hospitals. Computers & Industrial Engineering, 2026（录用）.",
     "Mingze Li, Huan Zhang*, Weiyou Guo, Kailing Li. Distributionally Robust Energy Replenishment Scheduling for Line-Haul Electric Heavy-Duty Trucks under the Battery Leasing-Swapping Mode. Computers & Industrial Engineering, 2026（录用）.",
     "Mingze Li, Qingcheng Zeng*, Kang Chen, Haobin Li. Integrated AGV Positioning and Scheduling Using Simulation-Based Reinforcement Learning and Combinatorial Optimization in Automated Container Terminals. IEEE Transactions on Intelligent Transportation Systems, 2026, 27(3): 3564-3578.",
-    "Mingze Li, Chenrui Qu*, Kailing Li*, Qingcheng Zeng. Predict-then-optimize for automated guided vehicle opportunity recharging scheduling considering nonlinear charging time. Engineering Applications of Artificial Intelligence, 2026, 185: 116510. https://doi.org/10.1016/j.engappai.2026.116510.",
     "李开玲, 李明泽*. 基于分数阶微分的灰色模型建模理论及其应用. 统计与决策, 2026（录用）.",
     "Xingchun Li, Mingze Li*, Zhicheng Chen, Qingcheng Zeng. Distributionally robust battery investment and replacement for AGV battery swapping stations with demand uncertainty in automated container terminals. Frontiers in Marine Science, 2026, 12: 1754484.",
+    "龚宇润, 李开玲, 李明泽. 基于分数阶局部灰色模型的基层网络舆情情感预测研究. 图书情报导刊, 2026（录用）.",
     "Bo Ren, Mingze Li*, Huan Zhang, Ping He. After-Sales Repair Center Location and Scheduling Problem with Drone Transportation: Exact and Heuristic Methods. Computers & Industrial Engineering, 2025, 211: 111627.",
     "李明泽, 曾庆成*, 李兴春. 数据驱动的自动化码头 AGV 分布鲁棒优化调度方法. 系统工程理论与实践, 2024, 45(04): 1375-1388.",
     "曾庆成*, 李明泽, 云霄. 考虑充电因素的自动化集装箱码头 AGV 任务分配模型. 运筹与管理, 2024, 33(03): 56-62.",
@@ -36,6 +38,7 @@
     "Statistics & Decision",
     "Computers & Industrial Engineering",
     "Engineering Applications of Artificial Intelligence",
+    "Journal of Library and Information Science",
     "Frontiers in Marine Science",
     "IEEE Transactions on Intelligent Transportation Systems",
     "Frontiers of Engineering Management Science and Technology",
@@ -52,6 +55,7 @@
     "统计与决策",
     "Computers & Industrial Engineering",
     "Engineering Applications of Artificial Intelligence",
+    "Journal of Library and Information Science",
     "Frontiers in Marine Science",
     "IEEE Transactions on Intelligent Transportation Systems",
     "工程管理科技前沿",
